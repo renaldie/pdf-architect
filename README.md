@@ -39,26 +39,20 @@ pdf-architect/
 ## 🚀 Development Setup
 
 1. **Install Dependencies**
-   Ensure you have [Bun](https://bun.com/) installed, then run:
+   Install packages for both the backend extension and the frontend webview:
    ```bash
    bun install
+   cd webview-ui && bun install && cd ..
    ```
 
 2. **Build the Webview UI**
-   The React frontend must be compiled into standard JavaScript/CSS for the VS Code webview to load it.
+   The React frontend must be compiled into standard JavaScript/CSS for the VS Code webview to load it:
    ```bash
-   cd webview-ui
-   bun run build
+   bun run build:webview
    ```
 
-3. **Compile the Extension**
-   Compile the TypeScript backend:
-   ```bash
-   bunx tsc -p tsconfig.json
-   ```
-
-4. **Run in VS Code**
-   Press `F5` in VS Code to launch the Extension Development Host. Open any `.pdf` file to launch PDF Architect!
+3. **Run in VS Code**
+   Press `F5` in VS Code. This will automatically compile the TypeScript backend and launch the Extension Development Host. Open any `.pdf` file to launch PDF Architect!
 
 ## 🔒 Security
 
