@@ -53,16 +53,3 @@ pdf-architect/
 
 3. **Run in VS Code**
    Press `F5` in VS Code. This will automatically compile the TypeScript backend and launch the Extension Development Host. Open any `.pdf` file to launch PDF Architect!
-
-## 🔒 Security
-
-This extension is built with a security-first approach:
-- **Strict Content Security Policy (CSP)**: The WebView is entirely isolated. It is blocked from making any external network requests, ensuring your PDF data can never leave your machine.
-- **Path Sanitization**: Backend endpoints strictly validate and sanitize all filenames to prevent path traversal vulnerabilities.
-- **Audited Dependencies**: Core libraries (like `pdfjs-dist`) are continuously audited and patched against arbitrary code execution exploits.
-
-## 🤖 CI/CD Automation
-
-This project is configured with ready-to-use GitHub Actions:
-- **Build VSIX Artifact**: Triggers on every push and PR to `main`, automatically testing the build and outputting a downloadable `.vsix` artifact.
-- **Release Automation**: Automatically compiles and attaches the final `.vsix` extension package to your GitHub Releases whenever a new release is published.
