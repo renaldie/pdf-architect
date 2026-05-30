@@ -22,10 +22,8 @@
     "vscode": "^1.80.0"
   },
   "categories": [
-    "PDF Editor",
-    "PDF Formatters",
-    "PDF Viewers",
-    "PDF Tools"
+    "Visualization",
+    "Formatters"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
