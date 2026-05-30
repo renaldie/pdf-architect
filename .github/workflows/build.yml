@@ -1,0 +1,48 @@
+name: Build VSIX Artifact
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Extension Dependencies
+        run: bun install
+
+      - name: Install Webview Dependencies
+        run: cd webview-ui && bun install
+
+      - name: Build Webview UI
+        run: bun run build:webview
+
+      - name: Install VSCE
+        run: npm install -g @vscode/vsce
+
+      - name: Package Extension
+        run: vsce package --out pdf-architect.vsix
+
+      - name: Upload VSIX Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-architect-vsix
+          path: pdf-architect.vsix

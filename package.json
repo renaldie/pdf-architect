@@ -1,0 +1,62 @@
+{
+  "name": "pdf-architect",
+  "displayName": "PDF Architect",
+  "description": "Lightning-fast PDF editor built natively into VS Code. Merge, split, sign, and export PDFs instantly.",
+  "version": "1.0.0",
+  "publisher": "apps-architect",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/pdf-architect"
+  },
+  "keywords": [
+    "pdf",
+    "editor",
+    "merge",
+    "split",
+    "viewer",
+    "signature"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "pdf-architect.pdfEditor",
+        "displayName": "PDF Architect Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.pdf"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "pdf-architect.open",
+        "title": "Open PDF Architect"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build:webview": "cd webview-ui && bun run build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}
