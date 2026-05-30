@@ -39,12 +39,6 @@
         ],
         "priority": "default"
       }
-    ],
-    "commands": [
-      {
-        "command": "pdf-architect.open",
-        "title": "Open PDF Architect"
-      }
     ]
   },
   "scripts": {

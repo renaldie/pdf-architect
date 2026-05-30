@@ -15,13 +15,6 @@ export function activate(context: vscode.ExtensionContext) {
       }
     )
   );
-
-  // Fallback command to open it manually
-  context.subscriptions.push(
-    vscode.commands.registerCommand('pdf-architect.open', (uri: vscode.Uri) => {
-      vscode.commands.executeCommand('vscode.openWith', uri, 'pdf-architect.pdfEditor');
-    })
-  );
 }
 
 export function deactivate() {}
