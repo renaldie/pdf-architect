@@ -3,6 +3,7 @@
   "displayName": "PDF Architect",
   "description": "Lightning-fast PDF editor built natively into VS Code. Merge, split, sign, and export PDFs instantly.",
   "version": "1.0.0",
+  "license": "MIT",
   "publisher": "apps-architect",
   "icon": "icon.png",
   "repository": {
