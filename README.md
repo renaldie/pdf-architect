@@ -54,7 +54,7 @@ pdf-architect/
 3. **Compile the Extension**
    Compile the TypeScript backend:
    ```bash
-   npx tsc -p tsconfig.json
+   bunx tsc -p tsconfig.json
    ```
 
 4. **Run in VS Code**
